@@ -1,3 +1,5 @@
+# based on recipe from http://code.activestate.com/recipes/577610-decoding-binary-files/
+
 import struct
 
 class BinaryReaderEOFException(Exception):

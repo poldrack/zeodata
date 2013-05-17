@@ -43,12 +43,13 @@ def time_to_hrmins(secs):
 
 if len(sys.argv)<2:
 	print 'USAGE: process_zeodata.py <dat file>'
-	datafile='/Users/poldrack/Desktop/ZEOSLEEP.DAT'
+	sys.exit(1)
 else:
 	datafile=sys.argv[1]
 	if not os.path.exists(datafile):
 		print '%s does not exist:'%datafile
 		print 'USAGE: process_zeodata.py <dat file>'
+                sys.exit(1)
 		
 IDENTIFIER_SIZE = 6
 VERSION_SIZE    = 2
@@ -62,7 +63,7 @@ HEADBAND_STATUS_SIZE = 36
 
 
 
-binaryReader=BinaryReader('/Users/poldrack/Desktop/ZEOSLEEP.DAT')
+binaryReader=BinaryReader(datafile)
 
 alldata={}
 good_session=1
